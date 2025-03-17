@@ -1,5 +1,7 @@
 package JPA.course.resources.exceptions;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.io.Serializable;
 import java.time.Instant;
 
@@ -21,6 +23,7 @@ public class StandardError implements Serializable {
         this.path = path;
     }
 
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'", timezone = "GMT")
     public Instant getTimestamp() {
         return timestamp;
     }
